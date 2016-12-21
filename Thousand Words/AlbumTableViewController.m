@@ -7,6 +7,7 @@
 //
 
 #import "AlbumTableViewController.h"
+#import "Album+CoreDataClass.h"
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
 
@@ -18,12 +19,6 @@
 {
     if (!_albums) _albums = [[NSMutableArray alloc] init];
     return _albums;
-}
-
-- (IBAction)addAlbumBarButtonItemPressed:(id)sender {
-    UIAlertView *newAlbumAlertView = [[UIAlertView alloc] initWithTitle:@"Enter New Album Name" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
-    [newAlbumAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    [newAlbumAlertView show];
 }
 
 - (void)viewDidLoad {
@@ -39,6 +34,32 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - IBActions
+
+- (IBAction)addAlbumBarButtonItemPressed:(id)sender {
+    UIAlertView *newAlbumAlertView = [[UIAlertView alloc] initWithTitle:@"Enter New Album Name" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    [newAlbumAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [newAlbumAlertView show];
+}
+
+#pragma mark - Helper methods
+
+-(Album *)albumWithName:(NString *)name {
+    id delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    
+    Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
+    album.name = name;
+    album.date = [NSDate date];
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // we have an error
+        NSLog(@"%@", error);
+    }
+    return album;
 }
 
 #pragma mark - UIAlertViewDelegate
