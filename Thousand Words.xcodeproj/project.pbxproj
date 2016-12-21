@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		276047D01E0B071A004D1BA9 /* Album+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+CoreDataClass.h"; sourceTree = "<group>"; };
-		276047D11E0B071A004D1BA9 /* Album+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+CoreDataClass.m"; sourceTree = "<group>"; };
-		276047D21E0B071A004D1BA9 /* Album+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+CoreDataProperties.h"; sourceTree = "<group>"; };
-		276047D31E0B071A004D1BA9 /* Album+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+CoreDataProperties.m"; sourceTree = "<group>"; };
+		276047D01E0B071A004D1BA9 /* Album+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Album+CoreDataClass.h"; path = "../Album+CoreDataClass.h"; sourceTree = "<group>"; };
+		276047D11E0B071A004D1BA9 /* Album+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Album+CoreDataClass.m"; path = "../Album+CoreDataClass.m"; sourceTree = "<group>"; };
+		276047D21E0B071A004D1BA9 /* Album+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Album+CoreDataProperties.h"; path = "../Album+CoreDataProperties.h"; sourceTree = "<group>"; };
+		276047D31E0B071A004D1BA9 /* Album+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Album+CoreDataProperties.m"; path = "../Album+CoreDataProperties.m"; sourceTree = "<group>"; };
 		27B350B11E0A87B70097F1C3 /* Thousand Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thousand Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B350B51E0A87B70097F1C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27B350B71E0A87B70097F1C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,10 +48,6 @@
 		27B350A81E0A87B60097F1C3 = {
 			isa = PBXGroup;
 			children = (
-				276047D01E0B071A004D1BA9 /* Album+CoreDataClass.h */,
-				276047D11E0B071A004D1BA9 /* Album+CoreDataClass.m */,
-				276047D21E0B071A004D1BA9 /* Album+CoreDataProperties.h */,
-				276047D31E0B071A004D1BA9 /* Album+CoreDataProperties.m */,
 				27B350B31E0A87B70097F1C3 /* Thousand Words */,
 				27B350B21E0A87B70097F1C3 /* Products */,
 			);
@@ -68,6 +64,10 @@
 		27B350B31E0A87B70097F1C3 /* Thousand Words */ = {
 			isa = PBXGroup;
 			children = (
+				276047D01E0B071A004D1BA9 /* Album+CoreDataClass.h */,
+				276047D11E0B071A004D1BA9 /* Album+CoreDataClass.m */,
+				276047D21E0B071A004D1BA9 /* Album+CoreDataProperties.h */,
+				276047D31E0B071A004D1BA9 /* Album+CoreDataProperties.m */,
 				27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */,
 				27B350D01E0A8D1D0097F1C3 /* AlbumTableViewController.h */,
 				27B350D11E0A8D1D0097F1C3 /* AlbumTableViewController.m */,
