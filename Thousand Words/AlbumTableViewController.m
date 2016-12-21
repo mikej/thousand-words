@@ -8,6 +8,7 @@
 
 #import "AlbumTableViewController.h"
 #import "Album+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
 
@@ -46,9 +47,10 @@
 
 #pragma mark - Helper methods
 
--(Album *)albumWithName:(NString *)name {
-    id delegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [delegate managedObjectContext];
+-(Album *)albumWithName:(NSString *)name {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSPersistentContainer *persistentContainer = [delegate persistentContainer];
+    NSManagedObjectContext *context = persistentContainer.viewContext;
     
     Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
     album.name = name;
