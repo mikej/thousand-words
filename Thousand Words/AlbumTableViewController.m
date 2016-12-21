@@ -8,7 +8,7 @@
 
 #import "AlbumTableViewController.h"
 
-@interface AlbumTableViewController ()
+@interface AlbumTableViewController () <UIAlertViewDelegate>
 
 @end
 
@@ -39,6 +39,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSString *alertText = [alertView textFieldAtIndex:0].text;
+        NSLog(@"My new album is %@", alertText);
+    }
 }
 
 #pragma mark - Table view data source
