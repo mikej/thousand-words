@@ -11,6 +11,8 @@
 		27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350B81E0A87B70097F1C3 /* AppDelegate.m */; };
 		27B350C21E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27B350C01E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld */; };
 		27B350C41E0A87B70097F1C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B350C31E0A87B70097F1C3 /* Assets.xcassets */; };
+		27B350CF1E0A8AC20097F1C3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */; };
+		27B350D21E0A8D1D0097F1C3 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350D11E0A8D1D0097F1C3 /* AlbumTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,9 @@
 		27B350C11E0A87B70097F1C3 /* Thousand_Words.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thousand_Words.xcdatamodel; sourceTree = "<group>"; };
 		27B350C31E0A87B70097F1C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B350C81E0A87B70097F1C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		27B350D01E0A8D1D0097F1C3 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
+		27B350D11E0A8D1D0097F1C3 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +58,9 @@
 		27B350B31E0A87B70097F1C3 /* Thousand Words */ = {
 			isa = PBXGroup;
 			children = (
-				27B350B71E0A87B70097F1C3 /* AppDelegate.h */,
-				27B350B81E0A87B70097F1C3 /* AppDelegate.m */,
+				27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */,
+				27B350D01E0A8D1D0097F1C3 /* AlbumTableViewController.h */,
+				27B350D11E0A8D1D0097F1C3 /* AlbumTableViewController.m */,
 				27B350C31E0A87B70097F1C3 /* Assets.xcassets */,
 				27B350C81E0A87B70097F1C3 /* Info.plist */,
 				27B350C01E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld */,
@@ -66,6 +72,8 @@
 		27B350B41E0A87B70097F1C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27B350B71E0A87B70097F1C3 /* AppDelegate.h */,
+				27B350B81E0A87B70097F1C3 /* AppDelegate.m */,
 				27B350B51E0A87B70097F1C3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -130,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B350C41E0A87B70097F1C3 /* Assets.xcassets in Resources */,
+				27B350CF1E0A8AC20097F1C3 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */,
+				27B350D21E0A8D1D0097F1C3 /* AlbumTableViewController.m in Sources */,
 				27B350B61E0A87B70097F1C3 /* main.m in Sources */,
 				27B350C21E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld in Sources */,
 			);
