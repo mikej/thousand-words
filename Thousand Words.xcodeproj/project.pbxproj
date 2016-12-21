@@ -13,6 +13,8 @@
 		27B350C41E0A87B70097F1C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B350C31E0A87B70097F1C3 /* Assets.xcassets */; };
 		27B350CF1E0A8AC20097F1C3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */; };
 		27B350D21E0A8D1D0097F1C3 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350D11E0A8D1D0097F1C3 /* AlbumTableViewController.m */; };
+		27B350D71E0A92F20097F1C3 /* Album+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350D41E0A92F20097F1C3 /* Album+CoreDataClass.m */; };
+		27B350D81E0A92F20097F1C3 /* Album+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350D61E0A92F20097F1C3 /* Album+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		27B350D01E0A8D1D0097F1C3 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		27B350D11E0A8D1D0097F1C3 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
+		27B350D31E0A92F20097F1C3 /* Album+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+CoreDataClass.h"; sourceTree = "<group>"; };
+		27B350D41E0A92F20097F1C3 /* Album+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+CoreDataClass.m"; sourceTree = "<group>"; };
+		27B350D51E0A92F20097F1C3 /* Album+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+CoreDataProperties.h"; sourceTree = "<group>"; };
+		27B350D61E0A92F20097F1C3 /* Album+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,10 @@
 		27B350A81E0A87B60097F1C3 = {
 			isa = PBXGroup;
 			children = (
+				27B350D31E0A92F20097F1C3 /* Album+CoreDataClass.h */,
+				27B350D41E0A92F20097F1C3 /* Album+CoreDataClass.m */,
+				27B350D51E0A92F20097F1C3 /* Album+CoreDataProperties.h */,
+				27B350D61E0A92F20097F1C3 /* Album+CoreDataProperties.m */,
 				27B350B31E0A87B70097F1C3 /* Thousand Words */,
 				27B350B21E0A87B70097F1C3 /* Products */,
 			);
@@ -149,10 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B350D71E0A92F20097F1C3 /* Album+CoreDataClass.m in Sources */,
 				27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */,
 				27B350D21E0A8D1D0097F1C3 /* AlbumTableViewController.m in Sources */,
 				27B350B61E0A87B70097F1C3 /* main.m in Sources */,
 				27B350C21E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld in Sources */,
+				27B350D81E0A92F20097F1C3 /* Album+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
