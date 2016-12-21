@@ -84,15 +84,16 @@
     return [self.albums count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    Album *album = self.albums[indexPath.row];
+    cell.textLabel.text = album.name;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
