@@ -67,7 +67,8 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         NSString *alertText = [alertView textFieldAtIndex:0].text;
-        NSLog(@"My new album is %@", alertText);
+        [self.albums addObject:[self albumWithName:alertText]];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.albums count] - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
