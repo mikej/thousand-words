@@ -60,12 +60,6 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 
     // Configure the cell
     cell.backgroundColor = [UIColor blackColor];
-    if ([cell isKindOfClass:[PhotoCollectionViewCell class]]) {
-        NSLog(@"It's a photo cell");
-    } else {
-        NSLog(@"It's not a photo cell");
-        NSLog(@"%@", [cell class]);
-    }
     cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
     
     return cell;
