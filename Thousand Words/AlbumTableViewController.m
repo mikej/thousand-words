@@ -9,6 +9,7 @@
 #import "AlbumTableViewController.h"
 #import "Album+CoreDataClass.h"
 #import "AppDelegate.h"
+#import "CoreDataHelper.h"
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
 
@@ -37,12 +38,8 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Album"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
     
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSPersistentContainer *persistentContainer = [delegate persistentContainer];
-    NSManagedObjectContext *context = persistentContainer.viewContext;
-    
     NSError *error = nil;
-    NSArray *fetchedAlbums = [context executeFetchRequest:fetchRequest error:&error];
+    NSArray *fetchedAlbums = [[CoreDataHelper managedObjectContext] executeFetchRequest:fetchRequest error:&error];
     
     self.albums = [fetchedAlbums mutableCopy];
     
@@ -65,9 +62,7 @@
 #pragma mark - Helper methods
 
 -(Album *)albumWithName:(NSString *)name {
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSPersistentContainer *persistentContainer = [delegate persistentContainer];
-    NSManagedObjectContext *context = persistentContainer.viewContext;
+    NSManagedObjectContext *context = [CoreDataHelper managedObjectContext];
     
     Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
     album.name = name;
