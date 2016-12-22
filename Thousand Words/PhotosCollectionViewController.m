@@ -24,7 +24,7 @@ static NSString * const reuseIdentifier = @"Photo Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
 }
@@ -66,7 +66,7 @@ static NSString * const reuseIdentifier = @"Photo Cell";
         NSLog(@"It's not a photo cell");
         NSLog(@"%@", [cell class]);
     }
-    // cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
+    cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
     
     return cell;
 }
