@@ -11,11 +11,20 @@
 
 @interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (strong, nonatomic) NSMutableArray *photos; // of UIImages
+
 @end
 
 @implementation PhotosCollectionViewController
 
 static NSString * const reuseIdentifier = @"Photo Cell";
+
+- (NSMutableArray *)photos {
+    if (!_photos) {
+        _photos = [[NSMutableArray alloc] init];
+    }
+    return _photos;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,7 +73,7 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return [self.photos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,7 +81,7 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 
     // Configure the cell
     cell.backgroundColor = [UIColor blackColor];
-    cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
+    cell.imageView.image = self.photos[indexPath.row];
     
     return cell;
 }
@@ -111,12 +120,17 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 #pragma mark - UIImagePickerControllerDelegate
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    NSLog(@"finished picking");
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    
+    [self.photos addObject:image];
+    
+    [self.collectionView reloadData];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    NSLog(@"cancel");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
