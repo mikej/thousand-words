@@ -7,6 +7,7 @@
 //
 
 #import "PhotosCollectionViewController.h"
+#import "PhotoCollectionViewCell.h"
 
 @interface PhotosCollectionViewController ()
 
@@ -55,10 +56,17 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     // Configure the cell
     cell.backgroundColor = [UIColor blackColor];
+    if ([cell isKindOfClass:[PhotoCollectionViewCell class]]) {
+        NSLog(@"It's a photo cell");
+    } else {
+        NSLog(@"It's not a photo cell");
+        NSLog(@"%@", [cell class]);
+    }
+    // cell.imageView.image = [UIImage imageNamed:@"Astronaut.jpg"];
     
     return cell;
 }
