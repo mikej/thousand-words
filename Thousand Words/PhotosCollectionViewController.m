@@ -9,7 +9,7 @@
 #import "PhotosCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 
-@interface PhotosCollectionViewController ()
+@interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -108,6 +108,16 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 }
 */
 
-- (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender {
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    NSLog(@"finished picking");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"cancel");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
