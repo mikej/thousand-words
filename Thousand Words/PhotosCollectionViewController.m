@@ -34,6 +34,18 @@ static NSString * const reuseIdentifier = @"Photo Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -96,4 +108,6 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 }
 */
 
+- (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender {
+}
 @end

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dvV-dW-YQt" id="1q8-vR-lkK">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -51,7 +51,7 @@
         <scene sceneID="RfU-mO-dql">
             <objects>
                 <collectionViewController id="sM6-uC-iTb" customClass="PhotosCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Mqj-0S-KVn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Mqj-0S-KVn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Photo Cell" id="Kg9-yG-oWE" customClass="PhotoCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Photo Cell" id="Kg9-yG-oWE" customClass="PhotoCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -77,7 +77,13 @@
                             <outlet property="delegate" destination="sM6-uC-iTb" id="Z49-0E-CD5"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Idn-fd-VEv"/>
+                    <navigationItem key="navigationItem" id="Idn-fd-VEv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="PiG-0K-Uje">
+                            <connections>
+                                <action selector="cameraBarButtonItemPressed:" destination="sM6-uC-iTb" id="diE-8O-iuy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEM-4B-bKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
