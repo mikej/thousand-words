@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="sM6-uC-iTb" kind="push" id="H2g-XO-CGc"/>
+                                    <segue destination="sM6-uC-iTb" kind="push" identifier="Album Chosen" id="H2g-XO-CGc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -8,6 +8,9 @@
 
 #import "PhotosCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
+#import "Photo+CoreDataClass.h"
+#import "PictureDataTransformer.h"
+#import "CoreDataHelper.h"
 
 @interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -36,6 +39,10 @@ static NSString * const reuseIdentifier = @"Photo Cell";
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    NSSet *unorderedPhotos = self.album.photos;
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSArray *sortedPhotos = [unorderedPhotos sortedArrayUsingDescriptors:@[dateDescriptor]];
+    self.photos = [sortedPhotos mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +60,23 @@ static NSString * const reuseIdentifier = @"Photo Cell";
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     }
     [self presentViewController:picker animated:YES completion:nil];
+}
+
+# pragma mark - helper methods
+
+-(Photo *)photoFromImage:(UIImage *)image {
+    Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:[CoreDataHelper managedObjectContext]];
+    
+    photo.image = image;
+    photo.date = [NSDate date];
+    photo.albumBook = self.album;
+    
+    NSError *error = nil;
+    if (![[photo managedObjectContext] save:&error]) {
+        // error in saving
+        NSLog(@"%@", error);
+    }
+    return photo;
 }
 
 /*
@@ -79,9 +103,11 @@ static NSString * const reuseIdentifier = @"Photo Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
+    Photo *photo = self.photos[indexPath.row];
+    
     // Configure the cell
     cell.backgroundColor = [UIColor blackColor];
-    cell.imageView.image = self.photos[indexPath.row];
+    cell.imageView.image = photo.image;
     
     return cell;
 }
@@ -123,7 +149,7 @@ static NSString * const reuseIdentifier = @"Photo Cell";
     UIImage *image = info[UIImagePickerControllerEditedImage];
     if (!image) image = info[UIImagePickerControllerOriginalImage];
     
-    [self.photos addObject:image];
+    [self.photos addObject:[self photoFromImage:image]];
     
     [self.collectionView reloadData];
     

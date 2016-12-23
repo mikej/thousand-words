@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Album+CoreDataClass.h"
 
 @interface PhotosCollectionViewController : UICollectionViewController
 
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender;
+
+@property (strong, nonatomic) Album *album;
 
 @end
