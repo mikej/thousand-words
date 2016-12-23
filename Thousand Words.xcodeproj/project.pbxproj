@@ -21,6 +21,7 @@
 		27DBBECA1E0C773D0004956A /* Album+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DBBEC41E0C773D0004956A /* Album+CoreDataProperties.m */; };
 		27DBBECB1E0C773D0004956A /* Photo+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DBBEC61E0C773D0004956A /* Photo+CoreDataClass.m */; };
 		27DBBECC1E0C773D0004956A /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DBBEC81E0C773D0004956A /* Photo+CoreDataProperties.m */; };
+		27DBBECF1E0C78630004956A /* PictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DBBECE1E0C78630004956A /* PictureDataTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		27DBBEC61E0C773D0004956A /* Photo+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataClass.m"; sourceTree = "<group>"; };
 		27DBBEC71E0C773D0004956A /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
 		27DBBEC81E0C773D0004956A /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		27DBBECD1E0C78630004956A /* PictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PictureDataTransformer.h; path = ../PictureDataTransformer.h; sourceTree = "<group>"; };
+		27DBBECE1E0C78630004956A /* PictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureDataTransformer.m; path = ../PictureDataTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 		2796C5521E0C76A4003FD6C0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				27DBBECD1E0C78630004956A /* PictureDataTransformer.h */,
+				27DBBECE1E0C78630004956A /* PictureDataTransformer.m */,
 				27DBBEC11E0C773D0004956A /* Album+CoreDataClass.h */,
 				27DBBEC21E0C773D0004956A /* Album+CoreDataClass.m */,
 				27DBBEC31E0C773D0004956A /* Album+CoreDataProperties.h */,
@@ -196,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DBBECF1E0C78630004956A /* PictureDataTransformer.m in Sources */,
 				27D7E6101E0BE96E00A3E573 /* PhotoCollectionViewCell.m in Sources */,
 				27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */,
 				27B350D21E0A8D1D0097F1C3 /* AlbumTableViewController.m in Sources */,
