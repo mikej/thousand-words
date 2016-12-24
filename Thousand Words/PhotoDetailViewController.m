@@ -8,6 +8,7 @@
 
 #import "PhotoDetailViewController.h"
 #import "Photo+CoreDataClass.h"
+#import "FiltersCollectionCollectionViewController.h"
 
 @interface PhotoDetailViewController ()
 
@@ -28,6 +29,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Filter Segue"]) {
+        if ([segue.destinationViewController isKindOfClass:[FiltersCollectionCollectionViewController class]]) {
+            FiltersCollectionCollectionViewController *destinationVC = segue.destinationViewController;
+            destinationVC.photo = self.photo;
+        }
+    }
 }
 
 /*

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271DF28E1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271DF28D1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.m */; };
 		27215A8A1E0F1110006F4827 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27215A891E0F1110006F4827 /* PhotoDetailViewController.m */; };
 		27B350B61E0A87B70097F1C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350B51E0A87B70097F1C3 /* main.m */; };
 		27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350B81E0A87B70097F1C3 /* AppDelegate.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		271DF28C1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersCollectionCollectionViewController.h; sourceTree = "<group>"; };
+		271DF28D1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersCollectionCollectionViewController.m; sourceTree = "<group>"; };
 		27215A881E0F1110006F4827 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		27215A891E0F1110006F4827 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		27B350B11E0A87B70097F1C3 /* Thousand Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thousand Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +112,8 @@
 				27D7E6081E0BDFDC00A3E573 /* CoreDataHelper.h */,
 				27D7E6091E0BDFDC00A3E573 /* CoreDataHelper.m */,
 				27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */,
+				271DF28C1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.h */,
+				271DF28D1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.m */,
 				27215A881E0F1110006F4827 /* PhotoDetailViewController.h */,
 				27215A891E0F1110006F4827 /* PhotoDetailViewController.m */,
 				27D7E60B1E0BE55C00A3E573 /* PhotosCollectionViewController.h */,
@@ -210,6 +215,7 @@
 				27D7E6101E0BE96E00A3E573 /* PhotoCollectionViewCell.m in Sources */,
 				27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */,
 				27B350D21E0A8D1D0097F1C3 /* AlbumTableViewController.m in Sources */,
+				271DF28E1E0F1FD800E4EAA0 /* FiltersCollectionCollectionViewController.m in Sources */,
 				27B350B61E0A87B70097F1C3 /* main.m in Sources */,
 				27B350C21E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld in Sources */,
 				27DBBECA1E0C773D0004956A /* Album+CoreDataProperties.m in Sources */,
