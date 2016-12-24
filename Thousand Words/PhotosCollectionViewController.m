@@ -11,6 +11,7 @@
 #import "Photo+CoreDataClass.h"
 #import "PictureDataTransformer.h"
 #import "CoreDataHelper.h"
+#import "PhotoDetailViewController.h"
 
 @interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -39,15 +40,35 @@ static NSString * const reuseIdentifier = @"Photo Cell";
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     NSSet *unorderedPhotos = self.album.photos;
     NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
     NSArray *sortedPhotos = [unorderedPhotos sortedArrayUsingDescriptors:@[dateDescriptor]];
     self.photos = [sortedPhotos mutableCopy];
+    
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"Detail Segue" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Detail Segue"]) {
+        if ([segue.destinationViewController isKindOfClass:[PhotoDetailViewController class]]) {
+            PhotoDetailViewController *targetVC = segue.destinationViewController;
+            NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+            Photo *selectedPhoto = self.photos[indexPath.row];
+            targetVC.photo = selectedPhoto;
+        }
+    }
 }
 
 - (IBAction)cameraBarButtonItemPressed:(UIBarButtonItem *)sender {

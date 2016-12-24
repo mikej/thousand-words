@@ -7,6 +7,7 @@
 //
 
 #import "PhotoDetailViewController.h"
+#import "Photo+CoreDataClass.h"
 
 @interface PhotoDetailViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.imageView.image = self.photo.image;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,5 +44,18 @@
 }
 
 - (IBAction)deleteButtonPressed:(UIButton *)sender {
+    [[self.photo managedObjectContext] deleteObject:self.photo];
+    
+    // on a device, save would happen automatically, but in the
+    // simulator where we can quit the app with cmd+Q call
+    // explicit save
+    NSError *error = nil;
+    [[self.photo managedObjectContext] save:&error];
+    
+    if (error) {
+        NSLog(@"error");
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

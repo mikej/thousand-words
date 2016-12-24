@@ -71,7 +71,7 @@
                                 </view>
                                 <size key="customSize" width="155" height="155"/>
                                 <connections>
-                                    <segue destination="sGT-tU-J0z" kind="push" id="Y4b-DI-CYm"/>
+                                    <segue destination="sGT-tU-J0z" kind="push" identifier="Detail Segue" id="Y4b-DI-CYm"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
