@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27215A8A1E0F1110006F4827 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27215A891E0F1110006F4827 /* PhotoDetailViewController.m */; };
 		27B350B61E0A87B70097F1C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350B51E0A87B70097F1C3 /* main.m */; };
 		27B350B91E0A87B70097F1C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B350B81E0A87B70097F1C3 /* AppDelegate.m */; };
 		27B350C21E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27B350C01E0A87B70097F1C3 /* Thousand_Words.xcdatamodeld */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27215A881E0F1110006F4827 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		27215A891E0F1110006F4827 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		27B350B11E0A87B70097F1C3 /* Thousand Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thousand Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B350B51E0A87B70097F1C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27B350B71E0A87B70097F1C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				27D7E6081E0BDFDC00A3E573 /* CoreDataHelper.h */,
 				27D7E6091E0BDFDC00A3E573 /* CoreDataHelper.m */,
 				27B350CE1E0A8AC20097F1C3 /* Storyboard.storyboard */,
+				27215A881E0F1110006F4827 /* PhotoDetailViewController.h */,
+				27215A891E0F1110006F4827 /* PhotoDetailViewController.m */,
 				27D7E60B1E0BE55C00A3E573 /* PhotosCollectionViewController.h */,
 				27D7E60C1E0BE55C00A3E573 /* PhotosCollectionViewController.m */,
 				27D7E60E1E0BE96E00A3E573 /* PhotoCollectionViewCell.h */,
@@ -210,6 +215,7 @@
 				27DBBECA1E0C773D0004956A /* Album+CoreDataProperties.m in Sources */,
 				27DBBECC1E0C773D0004956A /* Photo+CoreDataProperties.m in Sources */,
 				27DBBEC91E0C773D0004956A /* Album+CoreDataClass.m in Sources */,
+				27215A8A1E0F1110006F4827 /* PhotoDetailViewController.m in Sources */,
 				27D7E60D1E0BE55C00A3E573 /* PhotosCollectionViewController.m in Sources */,
 				27DBBECB1E0C773D0004956A /* Photo+CoreDataClass.m in Sources */,
 				27D7E60A1E0BDFDC00A3E573 /* CoreDataHelper.m in Sources */,

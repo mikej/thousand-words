@@ -70,6 +70,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
                                 <size key="customSize" width="155" height="155"/>
+                                <connections>
+                                    <segue destination="sGT-tU-J0z" kind="push" id="Y4b-DI-CYm"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -88,6 +91,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEM-4B-bKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1949.5999999999999" y="134.48275862068968"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="DgM-SA-HXA">
+            <objects>
+                <viewController id="sGT-tU-J0z" customClass="PhotoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bDq-ZR-zkh"/>
+                        <viewControllerLayoutGuide type="bottom" id="jgs-ay-RE5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="un3-VE-Yd6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQQ-kB-DFq">
+                                <rect key="frame" x="46" y="117" width="283" height="369"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50g-UG-LJb">
+                                <rect key="frame" x="46" y="554" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Filter"/>
+                                <connections>
+                                    <action selector="addFilterButtonPressed:" destination="sGT-tU-J0z" eventType="touchUpInside" id="c7l-HX-lNO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6x-kl-YJ7">
+                                <rect key="frame" x="283" y="554" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="sGT-tU-J0z" eventType="touchUpInside" id="4Qe-tZ-F8u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a4i-Au-rAf"/>
+                    <connections>
+                        <outlet property="imageView" destination="KQQ-kB-DFq" id="csf-xi-IFe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwK-6e-neK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2940" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JAX-Sw-JIU">
