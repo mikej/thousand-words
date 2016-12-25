@@ -7,6 +7,8 @@
 //
 
 #import "FiltersCollectionCollectionViewController.h"
+#import "PhotoCollectionViewCell.h"
+#import "Photo+CoreDataClass.h"
 
 @interface FiltersCollectionCollectionViewController ()
 
@@ -23,7 +25,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
     NSLog(@"photo to apply filters to: %@", self.photo);
@@ -58,10 +60,12 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
     cell.backgroundColor = [UIColor blackColor];
+    
+    cell.imageView.image = self.photo.image;
     
     return cell;
 }
