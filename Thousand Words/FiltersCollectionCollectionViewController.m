@@ -12,11 +12,18 @@
 
 @interface FiltersCollectionCollectionViewController ()
 
+@property (strong, nonatomic) NSMutableArray *filters;
+
 @end
 
 @implementation FiltersCollectionCollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
+
+- (NSMutableArray*)filters {
+    if (!_filters) _filters = [[NSMutableArray alloc] init];
+    return _filters;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
