@@ -51,6 +51,21 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PhotoCollectionViewCell *selectedCell = (PhotoCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    
+    self.photo.image = selectedCell.imageView.image;
+    
+    NSError *error = nil;
+    
+    if (![[self.photo managedObjectContext] save:&error]) {
+        NSLog(@"error saving filtered image");
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
