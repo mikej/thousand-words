@@ -57,13 +57,17 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.photo.image = selectedCell.imageView.image;
     
-    NSError *error = nil;
-    
-    if (![[self.photo managedObjectContext] save:&error]) {
-        NSLog(@"error saving filtered image");
+    if (self.photo.image) {    
+        NSError *error = nil;
+        
+        if (![[self.photo managedObjectContext] save:&error]) {
+            NSLog(@"error saving filtered image");
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 /*
